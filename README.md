@@ -1,20 +1,21 @@
-# Computational intelligence
+# Рачунарска интелигенција
 
-This repo contains examples of code for course Computational intelligence, held by me in 2019/2020, at 
-Faculty of Mathematics, University of Belgrade
+## Инсталација
 
-## Fields
-### Linear algebra
-    - Matrices
-    - Linear regression
-### Optimization algorithms
-    - Branch and bound
-    - Simulated annealing
-    - Evolutionary algorithms
-    - Particle swarm optimization
-### Fuzzy logic
+За управљање пројектом и библиотекама користи се `uv`.
+Потребно је прво њега инсталирати, па након клонирања репозиторијума покренути синхронизацију.
 
-### Neural networks
-    - Neural network from scratch
-    - Deep neural networks
-    - Convolutional neural networks
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+git clone https://github.com/MATF-RI/Materijali-sa-vezbi.git
+cd Materijali-sa-vezbi
+uv sync
+```
+На овај начин ће аутоматски бити преузета одговарајућа верзија Python-a (3.11), креирано виртуелно окружење и инсталиране све потребне библиотеке.
+
+За инсталацију CPLEX-a, потребно је улоговати се са факултетским мејлом на https://www.ibm.com/academic/ и у одељку Data Science преузети ILOG CPLEX optimisation studio 22.1.1 (можда ће бити потребно allow popups и вероватно је лакше изабрати http него download director).
+Да би се ова потпуна верзија CPLEX-a повезала са пројектом, потребно је покренути:
+```bash
+uv run python make_full.py /opt/ibm/ILOG/CPLEX_Studio2211
+```
+Ово је подразумевана путања, замените је својом уколико сте приликом инсталације изабрали неку другу.
