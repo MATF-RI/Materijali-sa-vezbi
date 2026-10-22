@@ -8,7 +8,7 @@ def read_instance(file_path: str) -> tuple[int, int, list[list[int]], list[int]]
         m, n = [int(x) for x in f.readline().split()]
         cost = [[int(x) for x in f.readline().split()] for _ in range(m)]
         facility_cost = [int(x) for x in f.readline().split()]
-        return m, n, cost, facility_cost
+        return m, n, np.array(cost), np.array(facility_cost)
 
 def read_bk_instance(file_path : str) -> tuple[int, int, list[list[int]], list[int]]:
     with open(file_path, "r") as f:
